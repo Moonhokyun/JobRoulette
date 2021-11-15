@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자 슬라이드</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500&display=swap" rel="stylesheet">
+    <style>
+        /* animation */
+        /* 돌아 = animation 값에 입력해 줄 이름 */
+        /* transform: translateY(0) y축을 중심으로 (숫자)만큼 변한다 */
+        @keyframes 돌아 {
+            0% {
+                transform: translateY(0);
+            }
+
+            25% {
+                transform: translateY(-20%);
+            }
+
+            50% {
+                transform: translateY(-40%);
+            }
+
+            75% {
+                transform: translateY(-60%);
+            }
+
+            100% {
+                transform: translateY(-80%);
+            }
+        }
+
+        /* reset */
+        body,
+        h1,
+        h2,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            /* li 요소들 deco 없앰 */
+            list-style-type: none;
+        }
+
+        /* style */
+        body {
+            background: #222;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .name {
+            margin: 100px;
+            font-size: 50px;
+            text-align: center;
+            color: #999;
+        }
+
+        .name-job {
+            /* after 가상요소 사용을 위한 relative */
+            position: relative;
+            /* 애니메이션이 보여지는 칸을 위한 height */
+            height: 80px;
+            /* 글자 간 간격을 위한 line-height */
+            line-height: 80px;
+            /* 박스 초과를 막기 위한 overflow: hidden */
+            overflow: hidden;
+            color: #fff;
+        }
+
+        .name-job-list {
+            /* ul 태그에다가 animation 값을 준다!  */
+            /* 돌아 = @keyframes에 지정해 준 name | 5s = 5초 | infinite = 무한으로 즐겨요  */
+            animation: 돌아 5s infinite;
+        }
+
+        .name-title {
+            color: rgb(0, 255, 34);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="name">
+        I'm a
+        <div class="name-job">
+            <ul class="name-job-list">
+                <li>Graphic Designer</li>
+                <li>UI/UX Designer</li>
+                <li>Junior FrontEnd Developer</li>
+                <li>MUNOART CEO</li>
+                <li>Graphic Designer</li>
+            </ul>
+        </div>
+        <h2 class="name-title">MOON HOKYUN</h2>
+    </div>
+</body>
+
+</html>
